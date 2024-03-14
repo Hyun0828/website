@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>21C 안경</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        header {
+            font-size: 15px;
+        }
+
+        .nav_items {
+            font-size: 17px;
+            font-weight: bold;
+            border-top: 2px solid #f1f3f6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .nav_items ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav_items ul > li {
+            display: inline-block;
+            margin-left: 40px;
+        }
+
+        .nav_items .auth_links {
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="center">
+    <header>
+        <a href="/">안녕하세요. 21C 안경 콘택트 프라자입니다</a>
+    </header>
+
+    <main>
+        <nav>
+            <div class="nav_items">
+                <ul>
+                    <li><a href="/">21C 안경 콘택트 프라자</a></li>
+                    <li><a href="/sunglasses">선글라스</a></li>
+                    <li><a href="/glasses">안경</a></li>
+                    <li><a href="/lens">렌즈</a></li>
+                    <li><a href="/map">매장 위치</a></li>
+                </ul>
+
+                <ul class="auth_links">
+                    <th:block th:if="${loggedIn}">
+                        <li><a href="/members/logout">로그아웃</a></li>
+                        <li><a href="/members/member">마이페이지</a></li>
+                    </th:block>
+                    <th:block th:unless="${loggedIn}">
+                        <li><a href="/members/login">로그인</a></li>
+                        <li><a href="/members/new">회원가입</a></li>
+                    </th:block>
+                </ul>
+            </div>
+
+<!--            <a href="/"><img src="/image/bob.png" alt="Bob"></a>-->
+        </nav>
+    </main>
+    <footer></footer>
+
+</div>
+<br>
+</body>
+</html>
